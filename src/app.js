@@ -1,5 +1,7 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
+import Transactionrouter from "./routes/transaction.routes.js";
+import Authrouter from "./routes/auth.routes.js";
 
 // Initializing Express App
 const app = express();
@@ -11,8 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // api route for testing 
-app.get('/health', (req, res) => {
-    res.send("Server is running");
-});
+app.use('/api/transactions', Transactionrouter);
+app.use("/api/auth", Authrouter);
 
-module.exports = app;
+export default app;
