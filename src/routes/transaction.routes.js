@@ -1,9 +1,9 @@
-import express from "express";
-import multer from "multer";
-import Transaction from "../models/Transaction.js";
-import { extractPdfText } from "../services/pdf.service.js";
-import { parseTransactions } from "../services/parser.service.js";
-import { translateTamilToEnglish } from "../services/translate.service.js";
+const express = require("express");
+const multer = require("multer");
+const Transaction = require("../models/Transaction.js");
+const { extractPdfText } = require("../services/pdf.service.js");
+const { parseTransactions } = require("../services/parser.service.js");
+const { translateTamilToEnglish } = require("../services/translate.service.js");
 
 
 const Transactionrouter = express.Router();
@@ -55,4 +55,4 @@ Transactionrouter.get("/", async (req, res) => {
 });
 
 
-export default Transactionrouter;
+module.exports = Transactionrouter;

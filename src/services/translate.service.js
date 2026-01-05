@@ -1,7 +1,7 @@
-import axios from "axios";
+const axios = require("axios");
 
 
-export const translateTamilToEnglish = async (record) => {
+module.exports.translateTamilToEnglish = async (record) => {
     const translate = async (text) => {
         if (!text) return null;
 

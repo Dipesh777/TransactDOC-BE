@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 
 const transactionSchema = new mongoose.Schema({
@@ -20,4 +20,4 @@ transactionSchema.index({ surveyNumber: 1 });
 transactionSchema.index({ documentNumber: 1 });
 
 
-export default mongoose.model("Transaction", transactionSchema);
+module.exports = mongoose.model("Transaction", transactionSchema);

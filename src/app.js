@@ -1,7 +1,7 @@
-import express from "express";
-import cors from "cors";
-import Transactionrouter from "./routes/transaction.routes.js";
-import Authrouter from "./routes/auth.routes.js";
+const express = require("express");
+const cors = require("cors");
+const Transactionrouter = require("./routes/transaction.routes.js");
+const Authrouter = require("./routes/auth.routes.js");
 
 // Initializing Express App
 const app = express();
@@ -16,4 +16,4 @@ app.use(express.json());
 app.use('/api/transactions', Transactionrouter);
 app.use("/api/auth", Authrouter);
 
-export default app;
+module.exports = app;
